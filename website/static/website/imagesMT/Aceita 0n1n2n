@@ -1,0 +1,29 @@
+digraph "Aceita 0n1n2n" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	C
+	B
+	E
+	A
+	D
+	H [shape=doublecircle]
+	Start -> A
+	A -> B [label="0ΔR"]
+	A -> E [label=XXR]
+	B -> B [label="00R"]
+	B -> B [label=XXR]
+	B -> C [label="1XR"]
+	C -> C [label="11R"]
+	C -> C [label=YYR]
+	C -> D [label="2YL"]
+	D -> D [label="00L"]
+	D -> D [label="11L"]
+	D -> D [label=XXL]
+	D -> D [label=YYL]
+	D -> A [label="ΔΔR"]
+	E -> E [label=XXR]
+	E -> E [label=YYR]
+	E -> H [label="ΔΔS"]
+}

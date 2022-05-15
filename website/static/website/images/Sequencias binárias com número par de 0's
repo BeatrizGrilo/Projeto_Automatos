@@ -1,0 +1,16 @@
+digraph "Sequencias binárias com número par de 0's" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	B
+	A
+	C [shape=doublecircle]
+	Start -> A
+	A -> B [label=0]
+	A -> A [label=1]
+	B -> C [label=0]
+	B -> B [label=1]
+	C -> B [label=0]
+	C -> C [label=1]
+}

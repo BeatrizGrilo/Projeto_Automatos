@@ -1,0 +1,18 @@
+digraph "Aceita sequências binárias com 0´s e 1´s alternados" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	B
+	A
+	C
+	H [shape=doublecircle]
+	Start -> A
+	A -> B [label="00R"]
+	A -> H [label="ΔΔR"]
+	A -> C [label="11R"]
+	B -> H [label="ΔΔR"]
+	B -> C [label="11R"]
+	C -> B [label="00R"]
+	C -> H [label="ΔΔR"]
+}

@@ -1,0 +1,47 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <h1 style="text-align: center; font-size: xx-large; margin-bottom: 30px">Autómatos Finitos Determinísticos (AFD)</h1>
+    <a href="{% url 'website:novo' %}" class="btn btn-secondary" style="text-align: center; margin-right: 15px; margin-left: 30px; width: 95%;">Criar um AFD</a>
+    <a href="{% url 'website:upload' %}" class="btn btn-outline-secondary" style="text-align: center; margin-right: 15px; margin-left: 30px; width: 95%;">Fazer upload de um ficheiro JSON</a>
+
+    <h3 style="margin-bottom: 30px; color: #0A2A34; text-align: center;font-size: large; margin-top: 30px">Apresentam-se em baixo autómatos que foram criados</h3>
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-6 border-bottom border-top">
+                <p style="font-size: x-large; font-weight: bolder;">Diagrama de estados</p>
+            </div>
+            <div class="col-sm-6 border-bottom border-top">
+                <p style="font-size: x-large; font-weight: bolder;">Descrição</p>
+            </div>
+        </div>
+    </div>
+
+
+        {% for automato in automatos %}
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-6 border-bottom">
+                {% load static %} <img src="{% static "website/images/"|add:automato.descricao|add:".svg"%}" alt="home" style="max-width: 100%; max-height: 200px" />
+            </div>
+            <div class="col-sm-6 border-bottom">
+                <p>
+                    {{ automato.descricao }}
+                </p>
+
+        <p>
+            <a href="{% url 'website:detalhes' automato.id %}" class="btn btn-info  btn-sm" style="float: right; margin-right: 10px">Detalhes</a>
+            <a href="{% url 'website:edita' automato.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">Editar AFD</a>
+            <a href="{% url 'website:apaga' automato.id %}" class="btn btn-danger  btn-sm" style="float: right; margin-right: 10px">Apagar AFD</a>
+            <a href="{% url 'website:validar' automato.id %}" role="button" class="btn btn-success btn-sm" style="float: right; margin-right: 10px">Validar Sequência</a>
+        </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+{% endblock %}

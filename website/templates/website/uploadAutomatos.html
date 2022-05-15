@@ -1,0 +1,15 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+<h3 style="margin-bottom: 30px; font-size: x-large; font-weight: bolder;">Upload de um ficheiro JSON</h3>
+    <form method="POST" enctype="multipart/form-data">
+        <div style="margin-top: 2rem">
+            {% csrf_token %}
+            <input type="file" name="document">
+            <button type="submit" class="btn btn-outline-dark">Upload File</button>
+        </div>
+        <p>
+            <a href="{% url 'website:automatos' %}" role="button" class="btn btn-warning" style="margin-top: 3rem;">Cancelar</a>
+        </p>
+    </form>
+{% endblock %}

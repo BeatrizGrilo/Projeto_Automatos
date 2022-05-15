@@ -1,0 +1,13 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <p style="text-align: center">Descrição: {{ detalhes.descricao }}</p>
+    <p style="text-align: center">Alfabeto: {{ detalhes.alfabeto }}</p>
+    <p style="text-align: center">Estados: {{ detalhes.estados }}</p>
+    <p style="text-align: center">Estado Inicial: {{ detalhes.estadoinicial }}</p>
+    <p style="text-align: center">Estados de Aceitação: {{ detalhes.estadodeaceitacao }}</p>
+    <p style="text-align: center">Transicões: {{ detalhes.transicoes }}</p>
+    <a href="{% url 'website:automatos' %}" role="button" class="btn btn-warning">Cancelar</a>
+
+
+{% endblock %}

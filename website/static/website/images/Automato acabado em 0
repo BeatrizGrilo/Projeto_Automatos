@@ -1,0 +1,13 @@
+digraph "Automato acabado em 0" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	A
+	B [shape=doublecircle]
+	Start -> A
+	A -> B [label=0]
+	A -> A [label=1]
+	B -> B [label=0]
+	B -> A [label=1]
+}

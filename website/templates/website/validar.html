@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <h2 style="margin-bottom: 30px; font-size: x-large; font-weight: bolder;">Validar sequência</h2>
+
+    <form action="" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Validar" class="btn btn-success">
+        <a href="{% url 'website:automatos' %}" role="button" class="btn btn-warning">Cancelar</a>
+    </form>
+
+    {% if resultado != None %}
+        <p style="text-align: center;margin-top: 30px; font-weight: bolder;">{{ resultado }}</p>
+    {% endif %}
+{% endblock %}

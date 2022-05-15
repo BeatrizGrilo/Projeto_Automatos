@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <p style="text-align: center">Descrição: {{ detalhesTM.descricao }}</p>
+    <p style="text-align: center">Estados: {{ detalhesTM.estados }}</p>
+    <p style="text-align: center">Estado Inicial: {{ detalhesTM.estadoinicial }}</p>
+    <p style="text-align: center">Estados de Aceitação: {{ detalhesTM.estadodeaceitacao }}</p>
+    <p style="text-align: center">Transicões: {{ detalhesTM.transicoes }}</p>
+    <a href="{% url 'website:maquinasturing' %}" role="button" class="btn btn-warning">Cancelar</a>
+
+
+{% endblock %}

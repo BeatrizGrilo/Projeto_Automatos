@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+	</head>
+	<body>
+	    <header class="jumbotron text-center bg-danger text-light">
+            <h1>Teoria da Computação</h1>
+            <p>Bem-vindo!!</p>
+            <nav>
+                <a href="{% url 'website:introducao' %}" class="btn btn-outline-light">Introdução</a>
+                <a href="{% url 'website:automatos' %}" class="btn btn-outline-light">Autómatos</a>
+                <a href="{% url 'website:maquinasturing' %}" class="btn btn-outline-light">Máquinas de Turing</a>
+            </nav>
+        </header>
+            <main class="container text-center">
+
+
+            {% block main %}
+	        {% endblock main %}
+            </main>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+    <h1 style="text-align: center; font-size: xx-large; margin-bottom: 30px">Máquinas Turing (MT)</h1>
+    <a href="{% url 'website:novaTM' %}" class="btn btn-secondary " style="text-align: center; margin-right: 15px; margin-left: 30px; width: 95%;">Criar MT</a>
+    <a href="{% url 'website:uploadTM' %}" class="btn btn-outline-secondary" style="text-align: center; margin-right: 15px; margin-left: 30px; width: 95%;">Fazer upload de um ficheiro JSON</a>
+
+    <h3 style="margin-bottom: 30px; color: #0A2A34; text-align: center;font-size: large; margin-top: 30px">Apresentam-se em baixo as máquinas de Turing que foram criadas</h3>
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-6 border-bottom border-top">
+                <p style="font-size: x-large; font-weight: bolder;">Diagrama de estados</p>
+            </div>
+            <div class="col-sm-6 border-bottom border-top">
+                <p style="font-size: x-large; font-weight: bolder;">Descrição</p>
+            </div>
+        </div>
+    </div>
+
+
+    {% for maquinaturing in maquinasturing %}
+        <div class = "container">
+            <div class="row">
+                <div class="col-sm-6 border-bottom">
+                    <p>{% load static %} <img src="{% static "website/imagesMT/"|add:maquinaturing.descricao|add:".svg"%}" alt="home" style="max-width: 100%; max-height: 200px" /></p>
+                </div>
+                <div class="col-sm-6 border-bottom">
+                    <p>
+                {{ maquinaturing.descricao }}
+            </p>
+        <p>
+            <a href="{% url 'website:detalhesTM' maquinaturing.id %}" class="btn btn-info  btn-sm" style="float: right; margin-right: 10px">Detalhes</a>
+            <a href="{% url 'website:editaTM' maquinaturing.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">Editar MT</a>
+            <a href="{% url 'website:apagaTM' maquinaturing.id %}" class="btn btn-danger  btn-sm" style="float: right; margin-right: 10px">Apagar MT</a>
+            <a href="{% url 'website:validarTM' maquinaturing.id %}" role="button" class="btn btn-success btn-sm" style="float: right; margin-right: 10px">Validar Sequência</a>
+
+
+        </p>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+digraph "Aceita sequências binárias que começam e acabam com o mesmo símbolo" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	A
+	D
+	B
+	C [shape=doublecircle]
+	E [shape=doublecircle]
+	Start -> A
+	A -> B [label=0]
+	A -> D [label=1]
+	B -> C [label=0]
+	B -> B [label=1]
+	C -> C [label=0]
+	C -> B [label=1]
+	D -> D [label=0]
+	D -> E [label=1]
+	E -> D [label=0]
+	E -> E [label=1]
+}

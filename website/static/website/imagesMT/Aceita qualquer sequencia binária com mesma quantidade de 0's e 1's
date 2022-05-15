@@ -1,0 +1,26 @@
+digraph "Aceita qualquer sequencia binária com mesma quantidade de 0's e 1's" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	B
+	C
+	A
+	D
+	H [shape=doublecircle]
+	Start -> A
+	A -> A [label=XXR]
+	A -> B [label="0XR"]
+	A -> D [label="1XR"]
+	A -> H [label="ΔΔS"]
+	B -> B [label="00R"]
+	B -> B [label=XXR]
+	B -> C [label="1XL"]
+	C -> C [label=XXR]
+	C -> C [label="00L"]
+	C -> C [label="11L"]
+	D -> D [label="11R"]
+	D -> D [label=XXR]
+	D -> C [label="0XL"]
+	C -> A [label="ΔΔR"]
+}

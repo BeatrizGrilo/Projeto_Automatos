@@ -1,0 +1,21 @@
+digraph "Sequências binárias onde primeiro tem os 0´s e depois os 1's com a mesma quantidade" {
+	graph [rankdir=LR]
+	node [color=deeppink shape=circle]
+	edge [arrowhead=vee arrowsize=1 color=deeppink]
+	Start [label="" shape=none]
+	C
+	B
+	A
+	D
+	H [shape=doublecircle]
+	Start -> A
+	A -> B [label="0ΔR"]
+	B -> B [label="00R"]
+	B -> B [label="11R"]
+	B -> C [label="ΔΔL"]
+	C -> D [label="1ΔL"]
+	D -> D [label="00L"]
+	D -> D [label="11L"]
+	D -> A [label="ΔΔR"]
+	A -> H [label="ΔΔS"]
+}
